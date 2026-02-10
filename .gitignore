@@ -1,0 +1,21 @@
+# --- Secrets & Environment ---
+.env
+.streamlit/secrets.toml
+
+# --- Python & Dependencies ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.env/
+
+# --- Database & Storage ---
+# Do not upload your local vector database
+chroma_db/
+*.sqlite3
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
