@@ -4,3 +4,5 @@ python-dotenv
 chromadb
 sentence-transformers
 pdfplumber
+pandas
+plotly
