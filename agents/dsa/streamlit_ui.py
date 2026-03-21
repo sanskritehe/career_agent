@@ -1,4 +1,4 @@
-https://github.com/SamyukthaSundar/multi-agent-career-assistantimport streamlit as st
+import streamlit as st
 import json
 import pandas as pd
 import plotly.graph_objects as go
