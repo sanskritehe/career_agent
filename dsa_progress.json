@@ -9,7 +9,7 @@
       "topic_name": "Arrays & Hashing",
       "description": "Master fundamental array operations and hash-based problems",
       "total_problems": 8,
-      "completed_problems": 3,
+      "completed_problems": 2,
       "problems": {
         "217": {
           "id": "217",
@@ -17,9 +17,9 @@
           "difficulty": "Easy",
           "leetcode_link": "https://leetcode.com/problems/contains-duplicate/",
           "completed": true,
-          "solved_date": "2026-03-08T20:21:13.418840",
-          "time_spent_mins": 0,
-          "notes": "",
+          "solved_date": "2026-03-21T13:38:11.528243",
+          "time_spent_mins": 2,
+          "notes": "i understood this now",
           "revisions": 0
         },
         "242": {
@@ -27,8 +27,8 @@
           "name": "Valid Anagram",
           "difficulty": "Easy",
           "leetcode_link": "https://leetcode.com/problems/valid-anagram/",
-          "completed": false,
-          "solved_date": null,
+          "completed": true,
+          "solved_date": "2026-03-21T13:18:42.981371",
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
@@ -38,8 +38,8 @@
           "name": "Two Sum",
           "difficulty": "Easy",
           "leetcode_link": "https://leetcode.com/problems/two-sum/",
-          "completed": true,
-          "solved_date": "2026-03-08T20:21:40.151636",
+          "completed": false,
+          "solved_date": null,
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
@@ -49,8 +49,8 @@
           "name": "Group Anagrams",
           "difficulty": "Medium",
           "leetcode_link": "https://leetcode.com/problems/group-anagrams/",
-          "completed": true,
-          "solved_date": "2026-03-08T20:21:15.628200",
+          "completed": false,
+          "solved_date": null,
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
@@ -167,7 +167,7 @@
     "Sliding Window": {
       "topic_name": "Sliding Window",
       "description": "Optimize array and string problems using sliding window",
-      "total_problems": 5,
+      "total_problems": 6,
       "completed_problems": 0,
       "problems": {
         "121": {
@@ -224,13 +224,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "424": {
+          "id": "424",
+          "name": "Longest Repeating Character Replacement",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Stack": {
       "topic_name": "Stack",
       "description": "Master stack-based problems and applications",
-      "total_problems": 5,
+      "total_problems": 6,
       "completed_problems": 0,
       "problems": {
         "20": {
@@ -282,6 +293,17 @@
           "name": "Daily Temperatures",
           "difficulty": "Medium",
           "leetcode_link": "https://leetcode.com/problems/daily-temperatures/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
+        },
+        "84": {
+          "id": "84",
+          "name": "Largest Rectangle in Histogram",
+          "difficulty": "Hard",
+          "leetcode_link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
           "completed": false,
           "solved_date": null,
           "time_spent_mins": 0,
@@ -378,7 +400,7 @@
     "Binary Search": {
       "topic_name": "Binary Search",
       "description": "Master binary search and its applications",
-      "total_problems": 5,
+      "total_problems": 6,
       "completed_problems": 0,
       "problems": {
         "704": {
@@ -430,6 +452,17 @@
           "name": "Median of Two Sorted Arrays",
           "difficulty": "Hard",
           "leetcode_link": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
+        },
+        "981": {
+          "id": "981",
+          "name": "Time Based Key-Value Store",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/time-based-key-value-store/",
           "completed": false,
           "solved_date": null,
           "time_spent_mins": 0,
@@ -570,7 +603,7 @@
     "Graphs": {
       "topic_name": "Graphs",
       "description": "Learn graph representations and traversal algorithms",
-      "total_problems": 7,
+      "total_problems": 8,
       "completed_problems": 0,
       "problems": {
         "200": {
@@ -649,13 +682,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "323": {
+          "id": "323",
+          "name": "Number of Connected Components",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Heap": {
       "topic_name": "Heap",
       "description": "Master heap data structure and priority queues",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "703": {
@@ -701,13 +745,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "215": {
+          "id": "215",
+          "name": "Kth Largest Element in an Array",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Dynamic Programming": {
       "topic_name": "Dynamic Programming",
       "description": "Master DP with overlapping subproblems and optimal substructure",
-      "total_problems": 10,
+      "total_problems": 11,
       "completed_problems": 0,
       "problems": {
         "70": {
@@ -819,13 +874,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "746": {
+          "id": "746",
+          "name": "Min Cost Climbing Stairs",
+          "difficulty": "Easy",
+          "leetcode_link": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Greedy": {
       "topic_name": "Greedy",
       "description": "Learn greedy algorithms and optimal choice problems",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "455": {
@@ -866,6 +932,17 @@
           "name": "Valid Parenthesis String",
           "difficulty": "Medium",
           "leetcode_link": "https://leetcode.com/problems/valid-parenthesis-string/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
+        },
+        "45": {
+          "id": "45",
+          "name": "Jump Game II",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/jump-game-ii/",
           "completed": false,
           "solved_date": null,
           "time_spent_mins": 0,
@@ -929,7 +1006,7 @@
     "Math & Geometry": {
       "topic_name": "Math & Geometry",
       "description": "Learn number theory, combinatorics, and geometry problems",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "50": {
@@ -975,13 +1052,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "54": {
+          "id": "54",
+          "name": "Spiral Matrix",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/spiral-matrix/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Strings": {
       "topic_name": "Strings",
       "description": "Master string manipulation and pattern matching",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "205": {
@@ -1027,13 +1115,35 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "5": {
+          "id": "5",
+          "name": "Longest Palindromic Substring",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/longest-palindromic-substring/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
+        },
+        "438": {
+          "id": "438",
+          "name": "Find All Anagrams in a String",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Backtracking": {
       "topic_name": "Backtracking",
       "description": "Master backtracking for combinatorial and permutation problems",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "78": {
@@ -1079,13 +1189,24 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "79": {
+          "id": "79",
+          "name": "Word Search",
+          "difficulty": "Medium",
+          "leetcode_link": "https://leetcode.com/problems/word-search/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     },
     "Bit Manipulation": {
       "topic_name": "Bit Manipulation",
       "description": "Learn bit operations and bitwise techniques",
-      "total_problems": 4,
+      "total_problems": 5,
       "completed_problems": 0,
       "problems": {
         "136": {
@@ -1131,8 +1252,27 @@
           "time_spent_mins": 0,
           "notes": "",
           "revisions": 0
+        },
+        "268": {
+          "id": "268",
+          "name": "Missing Number",
+          "difficulty": "Easy",
+          "leetcode_link": "https://leetcode.com/problems/missing-number/",
+          "completed": false,
+          "solved_date": null,
+          "time_spent_mins": 0,
+          "notes": "",
+          "revisions": 0
         }
       }
     }
+  },
+  "streak": {
+    "current": 1,
+    "longest": 1,
+    "last_active_date": "2026-03-21"
+  },
+  "daily_log": {
+    "2026-03-21": 1
   }
 }

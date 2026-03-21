@@ -8,6 +8,9 @@ load_dotenv()
 # Get the key from environment variables
 api_key = os.getenv("GROQ_API_KEY")
 
+if not api_key:
+    raise ValueError("GROQ_API_KEY environment variable is not set. Please set it in your .env file.")
+
 client = Groq(api_key=api_key)
 
 def call_llm(prompt):

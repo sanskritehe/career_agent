@@ -17,16 +17,18 @@ from agents.dsa.dsa_topics_db import (
 from agents.dsa.dsa_tutor_agent import (
     generate_dsa_roadmap,
     generate_problem_explanation,
+    generate_hint,
     suggest_next_topic,
     evaluate_readiness,
 )
 
-from agents.dsa.progress_tracker import (
+from agents.dsa.dsa_tutor_agent import (
     DSAProgressTracker,
     progress_tracker,
 )
 
 __all__ = [
+    # dsa_topics_db
     "DSA_TOPICS_MAP",
     "TIME_PLAN_CONFIGS",
     "get_all_topics",
@@ -37,10 +39,13 @@ __all__ = [
     "get_medium_problems",
     "get_hard_problems",
     "generate_daily_schedule",
+    # dsa_tutor_agent
     "generate_dsa_roadmap",
     "generate_problem_explanation",
+    "generate_hint",
     "suggest_next_topic",
     "evaluate_readiness",
+    # progress_tracker
     "DSAProgressTracker",
     "progress_tracker",
 ]
