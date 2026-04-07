@@ -103,7 +103,7 @@
     },
     "Two Pointers": {
       "topic_name": "Two Pointers",
-      "description": "Solve array and string problems using two pointer technique",
+      "description": "Solve array and string problems using two-pointer technique",
       "total_problems": 5,
       "completed_problems": 0,
       "problems": {
@@ -166,7 +166,7 @@
     },
     "Sliding Window": {
       "topic_name": "Sliding Window",
-      "description": "Optimize array and string problems using sliding window",
+      "description": "Optimise array and string problems using sliding window",
       "total_problems": 6,
       "completed_problems": 0,
       "problems": {

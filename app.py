@@ -9,6 +9,8 @@ from utils.rag_pipeline import get_index_status, index_job_descriptions
 from utils.database import init_db, save_resume_analysis, save_interview_session
 from auth.login_page import render_auth_page
 from auth.profile_page import render_profile_page
+from agents.coordinator_ui import render_coordinator_report   # ← coordinator
+from agents.extras_ui import render_extras_page               # ← AI tools
 
 st.set_page_config(page_title="Career AI Assistant", layout="wide")
 
@@ -19,12 +21,11 @@ except Exception as e:
     st.error(f"⚠️ Database connection failed: {e}\n\nCheck your .env MySQL settings.")
     st.stop()
 
-# ── Auth gate — show login page if not logged in ──────────────────────────────
+# ── Auth gate ─────────────────────────────────────────────────────────────────
 if "user" not in st.session_state or not st.session_state.user:
     render_auth_page()
     st.stop()
 
-# ── From here on, user is authenticated ──────────────────────────────────────
 user         = st.session_state.user
 user_id      = st.session_state.user_id
 display_name = user.get("full_name") or user.get("username", "User")
@@ -73,6 +74,11 @@ def render_resume_job_match():
                         with st.expander("View Full Analysis"):
                             st.json(resume_data)
 
+                        # Save for coordinator + extras
+                        st.session_state.resume_analysis_data = resume_data
+                        st.session_state.target_role_used = target_role
+                        st.session_state.resume_raw_text = resume_text
+
                     except json.JSONDecodeError:
                         st.error("The Resume Agent returned an invalid response.")
                         st.code(raw_resume)
@@ -99,6 +105,9 @@ def render_resume_job_match():
                                     overlap_bonus  = role.get("overlap_bonus", 0)
                                     rag_used       = role.get("rag_used", False)
                                     jd_count       = role.get("retrieved_jd_count", 0)
+
+                                    # Save for coordinator
+                                    st.session_state.job_match_result = role
 
                                     st.metric(label=f"Match for: {role.get('role')}", value=f"{match_score}%")
                                     st.progress(int(match_score) / 100)
@@ -160,22 +169,32 @@ with st.sidebar:
 
     # User card
     st.markdown(
-        f'<div style="background:#1e293b;border-radius:10px;padding:0.75rem 1rem;margin-bottom:1rem;">'
-        f'<div style="display:flex;align-items:center;gap:0.6rem;">'
-        f'<div style="width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);'
-        f'border-radius:50%;display:flex;align-items:center;justify-content:center;'
-        f'color:#fff;font-weight:800;font-size:1rem;flex-shrink:0;">{display_name[0].upper()}</div>'
-        f'<div><div style="color:#e2e8f0;font-weight:600;font-size:0.9rem;">{display_name}</div>'
-        f'<div style="color:#64748b;font-size:0.75rem;">@{user.get("username","")}</div></div>'
-        f'</div>'
-        f'{"<div style=\'color:#94a3b8;font-size:0.78rem;margin-top:6px;\'>&#127919; " + user.get("target_role","") + "</div>" if user.get("target_role") else ""}'
-        f'</div>',
-        unsafe_allow_html=True,
+    f'<div style="background:#1e293b;border-radius:10px;padding:0.75rem 1rem;margin-bottom:1rem;">'
+    f'<div style="display:flex;align-items:center;gap:0.6rem;">'
+    f'<div style="width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);'
+    f'border-radius:50%;display:flex;align-items:center;justify-content:center;'
+    f'color:#fff;font-weight:800;font-size:1rem;flex-shrink:0;">{display_name[0].upper()}</div>'
+    f'<div><div style="color:#e2e8f0;font-weight:600;font-size:0.9rem;">{display_name}</div>'
+    f'<div style="color:#64748b;font-size:0.75rem;">@{user.get("username","")}</div></div>'
+    f'</div>'
+    + (
+        f'<div style="color:#94a3b8;font-size:0.78rem;margin-top:6px;">&#127919; {user.get("target_role","")}</div>'
+        if user.get("target_role") else ''
     )
+    + f'</div>',
+    unsafe_allow_html=True,
+)
 
     page = st.radio(
         "Select Module:",
-        ["Resume & Job Match", "🎯 DSA Tutor", "🎤 Interview Prep", "👤 My Profile"],
+        [
+            "Resume & Job Match",
+            "🎯 DSA Tutor",
+            "🎤 Interview Prep",
+            "🎯 Readiness Report",
+            "🚀 AI Tools",
+            "👤 My Profile",
+        ],
         help="Choose what you want to work on",
     )
 
@@ -212,6 +231,35 @@ with st.sidebar:
         st.markdown("---")
         st.caption("Sessions are saved to your profile automatically.")
 
+    elif page == "🎯 Readiness Report":
+        st.markdown("### 🎯 Readiness Report")
+        st.markdown("---")
+        st.info(
+            "**Coordinator Agent synthesises:**\n\n"
+            "1. 📄 Resume analysis\n"
+            "2. 🧠 DSA progress\n"
+            "3. 🎤 Interview performance\n"
+            "4. 💼 Job match score\n\n"
+            "→ Detects contradictions\n"
+            "→ Unified readiness verdict\n"
+            "→ Live job market data"
+        )
+
+    elif page == "🚀 AI Tools":
+        st.markdown("### 🚀 AI Career Tools")
+        st.markdown("---")
+        st.info(
+            "Three tools to go beyond analysis:\n\n"
+            "📄 **Resume Builder** — AI rewrites your resume\n"
+            "with ATS keywords from real JDs\n\n"
+            "📚 **Learning Roadmap** — Maps skill gaps to\n"
+            "free resources + estimated time\n\n"
+            "🎯 **Answer Coach** — Rewrites your interview\n"
+            "answers using STAR / Technical framework"
+        )
+        st.markdown("---")
+        st.caption("Run Resume & Job Match first to unlock all features.")
+
     elif page == "👤 My Profile":
         st.info("View your interview history, resume analyses, and update your profile.")
 
@@ -231,7 +279,6 @@ if page == "Resume & Job Match":
 
 elif page == "🎤 Interview Prep":
     render_interview_prep()
-    # Save to DB when session finishes (once only)
     if (
         st.session_state.get("session_complete")
         and st.session_state.get("session_summary")
@@ -255,6 +302,12 @@ elif page == "🎤 Interview Prep":
             st.session_state.session_saved_to_db = True
         except Exception:
             pass
+
+elif page == "🎯 Readiness Report":
+    render_coordinator_report()
+
+elif page == "🚀 AI Tools":
+    render_extras_page()
 
 elif page == "👤 My Profile":
     render_profile_page()

@@ -355,11 +355,13 @@ def _render_answer_section(q: dict, q_index: int, config: dict):
             label = "##### ✍️ Your Solution" if is_coding else "##### ✍️ Your Answer"
             st.markdown(label)
             font_fam = "monospace" if is_coding else "inherit"
+            fallback = '<em style="color:#475569">No answer provided</em>'
+
             st.markdown(
                 f'<div style="background:#0f172a;border:1px solid #334155;border-radius:8px;'
                 f'padding:1rem;color:#cbd5e1;font-size:0.88rem;line-height:1.7;min-height:80px;'
                 f'white-space:pre-wrap;font-family:{font_fam};">'
-                f'{user_answer or "<em style=\'color:#475569\'>No answer provided</em>"}</div>',
+                f'{user_answer or fallback}</div>',
                 unsafe_allow_html=True,
             )
 

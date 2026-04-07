@@ -275,3 +275,4 @@ def get_user_stats(user_id: int) -> dict:
         "interview_best_score": float(interview["best_score"] or 0),
         "resume_analyses":      int(resume["total"] or 0),
     }
+print("MYSQL_PASSWORD:", os.getenv("MYSQL_PASSWORD"))
